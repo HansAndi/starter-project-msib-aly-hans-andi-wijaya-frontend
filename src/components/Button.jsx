@@ -6,7 +6,7 @@ const Button = ({ icon, name, className, children, onClick }) => {
         <button
             type='submit'
             onClick={onClick}
-            className={`relative ${icon ? 'flex justify-center' : ''} text-sm font-semibold rounded-xl w-full px-5 py-4 ${className}`}
+            className={`relative ${icon ? 'flex justify-center' : ''} text-sm font-semibold rounded-xl w-full py-4 ${className}`}
         >
             {icon ? (
                 <span className='mr-3'>

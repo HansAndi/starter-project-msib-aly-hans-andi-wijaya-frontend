@@ -96,7 +96,7 @@ export default function Profile() {
                                         />
                                     </div>
                                     <div className='flex justify-end pt-2'>
-                                        <Button className={"w-fit px-10 text-white bg-[#202020]"}>Save</Button>
+                                        <Button className={"max-w-fit px-10 text-white bg-[#202020]"}>Save</Button>
                                     </div>
                                 </div>
                             </div>
