@@ -1,11 +1,16 @@
+'use client'
 import Input from '@/components/Input'
 import Button from '@/components/Button'
 import React from 'react'
 import Link from 'next/link'
+import { useState } from 'react'
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 export default function Register() {
+    const[showPassword, setShowPassword] = useState(false);
+
     return (
-        <div className='min-h-screen flex flex-col items-center justify-center w-full my-6 lg:px-20 lg:my-0'>
+        <div className='min-h-screen flex flex-col items-center justify-center w-full my-6 lg:px-20 lg:my-0 bg-surface'>
             <div className="w-full max-w-sm">
                 <div className='inline-flex items-center justify-between w-full pt-4 pb-6'>
                     <div className='flex-col justify-center items-center gap-3.5 text-center w-full mb-5'>
@@ -34,9 +39,12 @@ export default function Register() {
                         <Input
                             placeholder={'********'}
                             name={'password'}
-                            type='password'
-                            icon={'/assets/eye.svg'}
-                        />
+                            type={showPassword ? 'text' : 'password'}
+                            icon={true}
+                            onClick={() => setShowPassword(!showPassword)}
+                        >
+                            {showPassword ? <FaEyeSlash /> : <FaEye />}
+                        </Input>
 
                         <div className='flex items-center justify-between my-5'>
                             <div className='flex items-center'>

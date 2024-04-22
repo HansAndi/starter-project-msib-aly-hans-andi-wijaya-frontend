@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-const Input = ({ name, placeholder, icon, type = 'text', setting }) => {
+const Input = ({ name, placeholder, icon, type = 'text', setting, onClick, children }) => {
   return (
     <div className={`my-5`}>
       <label
@@ -10,38 +10,37 @@ const Input = ({ name, placeholder, icon, type = 'text', setting }) => {
       >
         {name}
       </label>
-      <div className='mt-2 '>
-        <div className='relative flex rounded-xl shadow-sm border-2 border-solid border-[#202020] overflow-hidden'>
-          {type === 'textarea' ? (
-            <textarea
+      <div className='relative flex mt-2 rounded-xl shadow-sm border-2 border-solid border-[#202020] overflow-hidden'>
+        {type === 'textarea' ? (
+          <textarea
+            name={name}
+            id={name}
+            className={`flex-1 block w-full h-20 px-4 py-3 font-medium border-0 text-primary placeholder:text-grey ${setting ? 'bg-[#EDF2F6]' : 'bg-transparent'} md:text-lg sm:text-sm sm:leading-6 placeholder:font-medium placeholder:text-base focus:outline-none`}
+            placeholder={placeholder}
+          />
+        ) : (
+          <>
+            <input
+              type={type}
               name={name}
               id={name}
-              className={`flex-1 block w-full h-20 px-5 py-3 font-medium border-0 text-primary placeholder:text-grey ${setting ? 'bg-[#EDF2F6]' : ''} sm:text-sm sm:leading-6 placeholder:font-medium placeholder:text-sm focus:outline-none`}
+              className={`block w-full px-4 py-3 font-medium border-0 text-primary placeholder:text-grey ${setting ? 'bg-[#EDF2F6]' : 'bg-transparent'} md:text-lg sm:text-sm placeholder:font-medium placeholder:text-base focus:outline-none`}
               placeholder={placeholder}
-            />
-          ) : (
-            <>
-              <input
-                type={type}
-                name={name}
-                id={name}
-                className={`flex-1 block w-full px-5 py-3 font-medium border-0 text-primary placeholder:text-grey ${setting ? 'bg-[#EDF2F6]' : ''} sm:text-sm sm:leading-6 placeholder:font-medium placeholder:text-sm focus:outline-none`}
-                placeholder={placeholder}
-              />
-              {icon ? (
-                  <Image
-                    src={icon}
-                    alt='eye icon'
-                    width={20}
-                    height={20}
-                    className='absolute top-0 bottom-0 my-auto cursor-pointer right-5 z-1'
-                  />
-              ) : (
-                ''
-              )}
-            </>
-          )}
-        </div>
+            ></input>
+            {icon ? (
+              <button
+                type='button'
+                className='text-xl cursor-pointer bg-transparent border-none flex items-center pr-4'
+                onClick={onClick}
+              >
+                {children}
+              </button>
+
+            ) : (
+              ''
+            )}
+          </>
+        )}
       </div>
     </div>
   );

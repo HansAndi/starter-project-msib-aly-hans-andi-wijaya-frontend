@@ -26,7 +26,7 @@ export default function Profile() {
 
     return (
         <>
-            <div className="flex min-h-screen">
+            <div className="flex min-h-screen bg-surface">
                 <Sidebar />
                 <div className='w-full lg:ml-60 lg:pl-4 lg:flex lg:flex-col mt-5 mx-2'>
                     <div className="p-5">
@@ -34,7 +34,7 @@ export default function Profile() {
                         <div className="bg-white rounded-lg shadow-md my-4">
                             <div className="items-center px-8 py-4">
                                 <nav className='lg:flex text-black'>
-                                    <ul className='relative flex flex-col items-center justify-center cursor-pointer lg:justify-between sm:flex-row'>
+                                    <ul className='relative flex items-center justify-center cursor-pointer lg:justify-between sm:flex-row'>
                                         {links.map((link) => (
                                             <li
                                                 className='pr-3 py-3 group'
