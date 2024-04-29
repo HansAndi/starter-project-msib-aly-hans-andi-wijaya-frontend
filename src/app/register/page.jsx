@@ -6,10 +6,18 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import AuthLayout from '@/components/layouts/AuthLayout'
 
 export default function Register() {
+    return (
+        <AuthLayout title="Register" type="register">
+            <FormRegister />
+        </AuthLayout>
+    )
+}
+
+const FormRegister = () => {
     const [showPassword, setShowPassword] = useState(false);
 
     return (
-        <AuthLayout title="Register" type="register">
+        <form action="">
             <Input
                 placeholder={'John Doe'}
                 name={'name'}
@@ -27,7 +35,6 @@ export default function Register() {
             >
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
             </Input>
-        </AuthLayout>
+        </form>
     )
 }
-

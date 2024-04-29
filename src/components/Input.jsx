@@ -10,7 +10,7 @@ const Input = ({ name, placeholder, icon, type = 'text', setting, onClick, child
       >
         {name}
       </label>
-      <div className='relative flex mt-2 rounded-xl shadow-sm border-2 border-solid border-[#202020] overflow-hidden'>
+      <div className='relative flex mt-2 rounded-xl shadow-sm border-2 border-solid border-secondary overflow-hidden'>
         {type === 'textarea' ? (
           <textarea
             name={name}

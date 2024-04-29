@@ -1,3 +1,4 @@
+'use client'
 import Navbar from '@/components/Navbar'
 import Sidebar from '@/components/Sidebar'
 import React from 'react'
@@ -46,7 +47,8 @@ export default function Profile() {
                                                 >
                                                     {link.text}
                                                 </a>
-                                                <div className='group-hover:bg-black h-[1px] bg-transparent group-hover:animate-leftToRight transition-all'></div>
+                                                <div className='group-hover:bg-black h-[1px] bg-transparent group-hover:animate-bounce transition-all'></div>
+                                                <div className="text-gray-50 ml-3"></div>
                                             </li>
                                         ))}
                                     </ul>
@@ -65,7 +67,7 @@ export default function Profile() {
                                         />
                                         <hr className='border-gray-400' />
                                     </div>
-                                    <div className='lg:grid lg:grid-cols-2 gap-3'>
+                                    <div className='lg:grid lg:grid-cols-2 gap-x-3'>
                                         <Input
                                             placeholder={'John Doe'}
                                             name={'full name'}
@@ -88,7 +90,7 @@ export default function Profile() {
                                         />
                                     </div>
                                     <div className='w-full'>
-                                        <Input 
+                                        <Input
                                             placeholder={'Tell us about yourself'}
                                             name={'bio'}
                                             type={'textarea'}
@@ -96,7 +98,7 @@ export default function Profile() {
                                         />
                                     </div>
                                     <div className='flex justify-end pt-2'>
-                                        <Button className={"max-w-fit px-10 text-white bg-[#202020]"}>Save</Button>
+                                        <Button className={"max-w-fit px-10 text-white bg-secondary"}>Save</Button>
                                     </div>
                                 </div>
                             </div>

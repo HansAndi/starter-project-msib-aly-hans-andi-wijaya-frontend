@@ -6,11 +6,18 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import AuthLayout from '@/components/layouts/AuthLayout'
 
 export default function Login() {
+    return (
+        <AuthLayout title="Login" type="login">
+            <FormLogin />
+        </AuthLayout>
+    )
+}
+
+const FormLogin = () => {
     const [showPassword, setShowPassword] = useState(false);
 
     return (
-        // 
-        <AuthLayout title="Login" type="login">
+        <form action="">
             <Input
                 placeholder={'johndoe@example.com'}
                 name={'email'}
@@ -24,7 +31,6 @@ export default function Login() {
             >
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
             </Input>
-        </AuthLayout>
+        </form>
     )
 }
-

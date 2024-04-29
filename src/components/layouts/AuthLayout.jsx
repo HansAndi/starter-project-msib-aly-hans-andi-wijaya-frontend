@@ -12,7 +12,7 @@ const AuthLayout = ({ children, title, type }) => {
                     </div>
                 </div>
 
-                <Button icon="/assets/google.png" className={'border-2 border-solid border-[#202020]'}>Continue with Google</Button>
+                <Button icon="/assets/google.png" className={'border-2 border-solid border-secondary'}>Continue with Google</Button>
 
                 <div className="flex items-center mt-5 gap-5">
                     <hr className='flex-1 border-gray-400' />
@@ -20,17 +20,15 @@ const AuthLayout = ({ children, title, type }) => {
                     <hr className='flex-1 border-gray-400' />
                 </div>
 
-                <div className=''>
-                    <form action=''>
-                        {children}
+                {children}
 
-                        <Checkbox type={type} />
+                <Checkbox type={type} />
 
-                        <Button className={"text-white bg-[#202020]"}>{type === "login" ? "Log In" : "Create Account"}</Button>
-                    </form>
+                <Link href='/profile'>
+                    <Button className={"text-white bg-secondary"}>{type === "login" ? "Log In" : "Create Account"}</Button>
+                </Link>
 
-                    <Footer type={type} />
-                </div>
+                <Footer type={type} />
             </div>
         </div>
     )
@@ -41,7 +39,7 @@ const Checkbox = ({ type }) => {
         return (
             <div className='flex items-center justify-between my-5'>
                 <div className='flex items-center'>
-                    <input type='checkbox' className='mr-2 size-4 accent-[#202020]' />
+                    <input type='checkbox' className='mr-2 size-4 accent-secondary' />
                     <label htmlFor='rememberMe' className='text-sm font-normal text-primary'>Remember me</label>
                 </div>
                 <span className='font-semibold text-primary'><a href='#' className=''>Forgot password?</a></span>
@@ -51,7 +49,7 @@ const Checkbox = ({ type }) => {
         return (
             <div className='flex items-center justify-between my-5'>
                 <div className='flex items-center'>
-                    <input type='checkbox' className='mr-2 size-4 accent-[#202020]' />
+                    <input type='checkbox' className='mr-2 size-4 accent-secondary' />
                     <label htmlFor='termsConditions' className='text-sm font-normal text-primary'>I agree to Terms and Conditions</label>
                 </div>
             </div>
